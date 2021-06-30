@@ -22,6 +22,12 @@ router.get("/api/notes", (req, res) => {
   }
 });
 
+router.get("/api/test", (req, res) => {
+  res.json({
+    hello: "hi!"
+  });
+});
+
 // eslint-disable-next-line no-unused-vars
 router.patch("/api/update", (req, res) => {
   try {
@@ -106,14 +112,14 @@ app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
 
-// module.exports = app;
-// module.exports.handler = serverless(app);
+module.exports = app;
+module.exports.handler = serverless(app);
 
 // Export lambda handler
-const handler = serverless(app);
-exports.handler = async (event, context) => {
-  // you can do other things here
-  const result = await handler(event, context);
-  // and here
-  return result;
-};
+// const handler = serverless(app);
+// exports.handler = async (event, context) => {
+//   // you can do other things here
+//   const result = await handler(event, context);
+//   // and here
+//   return result;
+// };
