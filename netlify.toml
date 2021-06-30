@@ -2,3 +2,8 @@
   publish = "dist"                                                                                                                                   
   command = "npm run build"                    
   functions = "functions/dist"
+  
+[[redirects]]
+  from = "/"
+  to = "/db.json"
+  status = 302
